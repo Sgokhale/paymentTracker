@@ -1,0 +1,54 @@
+<div class="container padding-all-10 max-width-900">
+  <h3 class="text-center padding-all-10 col-lg-12">Invoice</h3>
+  <div>
+    <form>
+      <div class="col-lg-12">
+
+        <label class="col-lg-2 text-center padding-all-10" for="inv">Invoice no:</label>
+        <input class="col-lg-2 text-center padding-all-5 border-3" name="inv" id="inv" ng-model="vm.invoice.inv" />
+
+        <span class="col-lg-4"></span>
+
+        <label class="col-lg-1 text-center padding-all-10" for="date">Date:</label>
+        <input class="col-lg-2 text-center padding-all-5 border-3" name="date" id="date" ng-model="vm.invoice.date" />
+
+      </div>
+
+      <div class="col-lg-12">
+        <label class="col-lg-2 text-center padding-all-10" for="client">Client Name:</label>
+        <input class="col-lg-8 text-center padding-all-5 border-3" name="client" id="client" ng-model="vm.invoice.client" />
+      </div>
+
+      <div class="col-lg-12">
+        <label class="col-lg-2 text-center padding-all-10" for="poc">Kind attn:</label>
+        <input class="col-lg-8 text-center padding-all-5 border-3" name="poc" id="poc" ng-model="vm.invoice.poc" />
+      </div>
+
+      <div class="col-lg-12">
+        <label class="col-lg-2 text-center padding-all-10" for="amt">Total:</label>
+        <input class="col-lg-2 text-center padding-all-5 border-3" name="amt" id="amt" ng-model="vm.invoice.amt" />
+
+        <label class="col-lg-1 text-center padding-all-10" for="contact">Ph.:</label>
+        <input class="col-lg-2 text-center padding-all-5 border-3" name="contact" id="contact" ng-model="vm.invoice.contact" />
+
+        <label class="col-lg-2 text-center padding-all-10" for="zip">Zip code:</label>
+        <input class="col-lg-2 text-center padding-all-5 border-3" name="zip" id="zip" ng-model="vm.invoice.zip" />
+      </div>
+
+      <div>
+        <span class="col-lg-1"></span>
+
+        <label class="col-lg-2 text-center padding-all-10">Status:</label>
+        <label class="col-lg-2 text-center padding-all-5 border-3"><input type="radio" ng-model="vm.invoice.status" value="pending" />
+          pending
+        </label>
+
+        <label class="col-lg-2 text-center padding-all-5 border-3"><input type="radio" ng-model="vm.invoice.status" value="settled" />
+          settled
+        </label>
+
+      </div>
+
+    </form>
+  </div>
+</div>

@@ -1,0 +1,66 @@
+<div class="container margin-top-50">
+  <!--<ul>
+    <li class="no-bullets col-lg-4">
+      <button class="btn btn-primary btn-lg btn-block btn-medium">All</button>
+    </li>
+    <li class="no-bullets col-lg-4">
+      <button class="btn btn-primary btn-lg btn-block btn-medium">Settled</button>
+    </li>
+    <li class="no-bullets col-lg-4">
+      <button class="btn btn-primary btn-lg btn-block btn-medium">Pending</button>
+    </li>
+  </ul>-->
+
+  <div class="table-pos margin-top-50">
+    <span class="col-lg-1 table-data">Sr. No.</span>
+    <span class="col-lg-1 table-data">Inv No.</span>
+    <span class="col-lg-6 table-data">Client Details</span>
+    <span class="col-lg-2 table-data">Invoice Date</span>
+    <span class="col-lg-2 table-data">Amount</span>
+  </div>
+
+  <div class="table-pos">
+    <form>
+      <ul class="no-margin no-padding">
+
+        <li class="no-bullets no-margin no-padding col-lg-1">
+          <span class="col-lg-12 table-data">Search:</span>
+        </li>
+
+        <li class="no-bullets no-margin no-padding col-lg-1">
+          <input type="text" class="form-control form-control-custom" ng-model="vm.searchQuery.inv" ng-model-options="{'allowInvalid': true}" uib-typeahead="invoice.inv for invoice in vm.masterData | filter:$viewValue" typeahead-editable="false" typeahead-on-select="vm.filterData($item, 'inv')"
+            ng-blur="vm.filterData(vm.searchQuery.inv, 'inv')" />
+        </li>
+
+        <li class="no-bullets no-margin no-padding col-lg-6">
+          <input type="text" class="form-control form-control-custom" ng-model="vm.searchQuery.client" ng-model-options="{'allowInvalid': true}" uib-typeahead="invoice.client for invoice in vm.masterData | filter:$viewValue" typeahead-editable="false" typeahead-on-select="vm.filterData($item, 'client')"
+            ng-blur="vm.filterData(vm.searchQuery.inv, 'client')" />
+        </li>
+
+        <li class="no-bullets no-margin no-padding col-lg-2">
+          <input type="text" class="form-control form-control-custom" ng-model="vm.searchQuery.date" ng-model-options="{'allowInvalid': true}" uib-typeahead="invoice.date for invoice in vm.masterData | filter:$viewValue" typeahead-editable="false" typeahead-on-select="vm.filterData($item, 'date')"
+            ng-blur="vm.filterData(vm.searchQuery.inv, 'date')" />
+        </li>
+
+        <li class="no-bullets no-margin no-padding col-lg-2">
+          <input type="text" class="form-control form-control-custom" ng-model="vm.searchQuery.amt" ng-model-options="{'allowInvalid': true}" uib-typeahead="invoice.amt for invoice in vm.masterData | filter:$viewValue" typeahead-editable="false" typeahead-on-select="vm.filterData($item, 'amt')"
+            ng-blur="vm.filterData(vm.searchQuery.inv, 'amt')" />
+        </li>
+
+      </ul>
+
+
+    </form>
+
+  </div>
+
+  <div ng-click="vm.showDetails(invoice)" class="table-pos" ng-class="{'ltGreen': (invoice.status == 'settled'), 'ltRed': (invoice.status == 'pending')}" ng-repeat="invoice in vm.invoicesToDisplay">
+
+    <span class="col-lg-1 table-data no-border-right">{{$index + 1}}</span>
+    <span class="col-lg-1 table-data no-border-left no-border-right">{{invoice.inv}}</span>
+    <span class="col-lg-6 table-data no-border-left no-border-right">{{invoice.client}}</span>
+    <span class="col-lg-2 table-data no-border-left no-border-right">{{invoice.date}}</span>
+    <span class="col-lg-2 table-data no-border-left">{{invoice.amt}}</span>
+  </div>
+
+</div>
